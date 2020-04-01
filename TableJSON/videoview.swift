@@ -7,9 +7,35 @@
 //
 
 import UIKit
+import AVKit
 
-class videoview: UIView {
-
+class videoview: UIView, AVPlayerViewControllerDelegate {
+    
+        
+        
+        let videoURL = URL(string: "https://shareurvideo.000webhostapp.com/video/dddd.mp4")
+        let player = AVPlayer(url: videoURL)
+        let playervc = AVPlayerViewController()
+        
+        playervc.delegate = self
+        playervc.player = player
+    
+    let topVC = topMostController()
+        
+        topVC.present(playervc, animated: true) {
+            playervc.player?.play()
+        }
+        super.viewDidLoad()
+        
+        
+    }
+    func topMostController() -> UIViewController {
+        var topController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
+        while (topController.presentedViewController != nil) {
+            topController = topController.presentedViewController!
+        }
+        return topController
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,4 +44,4 @@ class videoview: UIView {
     }
     */
 
-}
+

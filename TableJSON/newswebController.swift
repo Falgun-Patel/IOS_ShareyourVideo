@@ -9,27 +9,17 @@
 import UIKit
 
 class newswebController: UIViewController {
-
+@IBOutlet weak var newsweb: UIWebView?
+    @IBOutlet weak var newswe: UIWebView?
+    var nameToDisplay = " "
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        newswe?.loadRequest(NSURLRequest(url: NSURL(string: "https://www.google.com")! as URL) as URLRequest)
+print(nameToDisplay)
+        newsweb?.loadRequest(NSURLRequest(url: NSURL(string: nameToDisplay)! as URL) as URLRequest)
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

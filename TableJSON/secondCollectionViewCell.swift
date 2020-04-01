@@ -8,6 +8,9 @@
 
 import UIKit
 
-class secondCollectionViewCell: UICollectionViewCell {
-    
+class secondCollectionViewCell: UITableViewCell {
+ 
+    @IBOutlet weak var imageViewFood: UIImageView?
+    @IBOutlet weak var lblFoodName: UILabel?
+    @IBOutlet weak var lblDescription: UILabel?
 }

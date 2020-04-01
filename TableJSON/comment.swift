@@ -9,7 +9,9 @@
 import UIKit
 
 class comment: UITableViewCell {
+    @IBOutlet weak var commentweb: UIWebView!
 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

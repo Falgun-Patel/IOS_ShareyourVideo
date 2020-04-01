@@ -9,7 +9,10 @@
 import UIKit
 
 class likeCell: UITableViewCell {
-
+    @IBOutlet weak var imageViewFood: UIImageView?
+    @IBOutlet weak var lblFoodName: UILabel?
+    @IBOutlet weak var lblDescription: UILabel?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
